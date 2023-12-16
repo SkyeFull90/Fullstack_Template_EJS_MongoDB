@@ -9,7 +9,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Connect to MongoDB - create a .env file and populate these environment variables with your database information.
-mongoose.connect(`mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0.pztfz.mongodb.net/${process.env.MONGODB_COLLECTION_NAME}?retryWrites=true&w=majority`)
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
